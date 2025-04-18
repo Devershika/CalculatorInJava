@@ -25,3 +25,44 @@ public class Main {
             choice = sc.nextInt();
 
 
+            try {
+                switch (choice) {
+                    case 1:
+                        calc.addition();
+                        break;
+                    case 2:
+                        calc.subtraction();
+                        break;
+                    case 3:
+                        calc.multiplication();
+                        break;
+                    case 4:
+                        calc.division();
+                        break;
+                    case 5:
+                        calc.square();
+                        break;
+                    case 6:
+                        calc.cube();
+                        break;
+                    case 7:
+                        calc.squareRoot();
+                        break;
+                    case 8:
+                        System.out.println("Exiting Calculator...");
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Try again.");
+                }
+            } catch (ArithmeticException e) {
+                System.out.println("Math Error: " + e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
+        } while (choice != 8);
+
+        sc.close();
+    }
+}
+
